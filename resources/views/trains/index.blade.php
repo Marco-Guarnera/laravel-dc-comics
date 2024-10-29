@@ -9,6 +9,7 @@
         <table class="table table-hover">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Azienda</th>
                     <th>Stazione di partenza</th>
                     <th>Stazione di arrivo</th>
@@ -22,6 +23,7 @@
             <tbody>
                 @forelse ($trains_list as $item)
                     <tr>
+                        <td><a href="{{ route('trains.show', $item->id) }}">{{ $item->id }}</a></td>
                         <td>{{ $item->azienda }}</td>
                         <td>{{ $item->stazione_partenza }}</td>
                         <td>{{ $item->stazione_arrivo }}</td>

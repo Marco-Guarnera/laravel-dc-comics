@@ -12,4 +12,10 @@ class TrainController extends Controller
         $trains_list = Train::all();
         return view('trains.index', compact('trains_list'));
     }
+
+    // Show
+    public function show(string $id) {
+        $train = Train::findOrFail($id);
+        return view('trains.show', compact('train'));
+    }
 }

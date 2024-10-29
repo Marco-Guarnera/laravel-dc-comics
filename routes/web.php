@@ -21,3 +21,6 @@ Route::get('/', function() {
 
 // Index
 Route::get('/trains', [TrainController::class, 'index'])->name('trains.index');
+
+// Show
+Route::get('/trains/{id}', [TrainController::class, 'show'])->name('trains.show');
