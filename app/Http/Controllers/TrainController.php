@@ -18,4 +18,9 @@ class TrainController extends Controller
         $train = Train::findOrFail($id);
         return view('trains.show', compact('train'));
     }
+
+    // Create
+    public function create() {
+        return view('trains.create');
+    }
 }

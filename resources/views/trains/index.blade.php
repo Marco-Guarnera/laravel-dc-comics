@@ -5,6 +5,7 @@
 <!-- Index -->
 @section("main")
     <div class="container-fluid">
+        <a href="{{ route('trains.create') }}" class="btn btn-primary">Create</a>
         <!-- Table -->
         <table class="table table-hover">
             <thead>
