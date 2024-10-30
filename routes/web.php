@@ -19,11 +19,14 @@ Route::get('/', function() {
     return view('pages.home-page');
 })->name('homepage');
 
-// Index
-Route::get('/trains', [TrainController::class, 'index'])->name('trains.index');
-
 // Create
 Route::get('/trains/create', [TrainController::class, 'create'])->name('trains.create');
+
+// Store
+Route::post('/trains', [TrainController::class, 'store'])->name('trains.store');
+
+// Index
+Route::get('/trains', [TrainController::class, 'index'])->name('trains.index');
 
 // Show
 Route::get('/trains/{id}', [TrainController::class, 'show'])->name('trains.show');
