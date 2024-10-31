@@ -37,6 +37,11 @@
                         <td>
                             <a href="{{ route('trains.show', $item->id) }}" class="btn btn-success">Show</a>
                             <a href="{{ route('trains.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('trains.delete', $item->id) }}" method="post" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 @empty

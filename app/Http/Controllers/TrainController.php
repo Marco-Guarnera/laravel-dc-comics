@@ -71,4 +71,13 @@ class TrainController extends Controller
 
         return redirect()->route('trains.index');
     }
+
+    // Delete
+    public function destroy(string $id) {
+        $train = Train::findOrFail($id);
+
+        $train->delete();
+
+        return redirect()->route('trains.index');
+    }
 }

@@ -36,3 +36,6 @@ Route::get('/trains/{id}/edit', [TrainController::class, 'edit'])->name('trains.
 
 // Update
 Route::put('/trains/{id}', [TrainController::class, 'update'])->name('trains.update');
+
+// Delete
+Route::delete('trains/{id}', [TrainController::class, 'destroy'])->name('trains.delete');
