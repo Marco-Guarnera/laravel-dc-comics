@@ -30,3 +30,6 @@ Route::get('/trains', [TrainController::class, 'index'])->name('trains.index');
 
 // Show
 Route::get('/trains/{id}', [TrainController::class, 'show'])->name('trains.show');
+
+// Edit
+Route::get('/trains/{id}/edit', [TrainController::class, 'edit'])->name('trains.edit');
