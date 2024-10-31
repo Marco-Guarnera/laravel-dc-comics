@@ -60,6 +60,8 @@ class TrainController extends Controller
         $data_list = $request->all();
 
         $train = Train::findOrFail($id);
+
+        /*
         $train->azienda = $data_list['azienda'];
         $train->stazione_partenza = $data_list['stazione-partenza'];
         $train->stazione_arrivo = $data_list['stazione-arrivo'];
@@ -71,7 +73,9 @@ class TrainController extends Controller
         $train->numero_carrozze = $data_list['numero-carrozze'];
         $train->in_orario = $data_list['in-orario'];
         $train->cancellato = $data_list['cancellato'];
-        $train->update();
+        */
+
+        $train->update($data_list);
 
         return redirect()->route('trains.index');
     }
