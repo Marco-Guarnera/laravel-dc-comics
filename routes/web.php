@@ -19,23 +19,20 @@ Route::get('/', function() {
     return view('pages.home-page');
 })->name('homepage');
 
-// Create
-Route::get('/trains/create', [TrainController::class, 'create'])->name('trains.create');
-
-// Store
-Route::post('/trains', [TrainController::class, 'store'])->name('trains.store');
-
-// Index
-Route::get('/trains', [TrainController::class, 'index'])->name('trains.index');
-
-// Show
-Route::get('/trains/{id}', [TrainController::class, 'show'])->name('trains.show');
-
-// Edit
-Route::get('/trains/{id}/edit', [TrainController::class, 'edit'])->name('trains.edit');
-
-// Update
-Route::put('/trains/{id}', [TrainController::class, 'update'])->name('trains.update');
-
-// Delete
-Route::delete('trains/{id}', [TrainController::class, 'destroy'])->name('trains.delete');
+// Trains
+Route::name('trains.')->group(function() {
+    // Create
+    Route::get('/trains/create', [TrainController::class, 'create'])->name('create');
+    // Store
+    Route::post('/trains', [TrainController::class, 'store'])->name('store');
+    // Index
+    Route::get('/trains', [TrainController::class, 'index'])->name('index');
+    // Show
+    Route::get('/trains/{id}', [TrainController::class, 'show'])->name('show');
+    // Edit
+    Route::get('/trains/{id}/edit', [TrainController::class, 'edit'])->name('edit');
+    // Update
+    Route::put('/trains/{id}', [TrainController::class, 'update'])->name('update');
+    // Delete
+    Route::delete('trains/{id}', [TrainController::class, 'destroy'])->name('delete');
+});
