@@ -16,6 +16,7 @@ class TrainController extends Controller
     public function store(Request $request) {
         $data_list = $request->all();
 
+        /*
         $train = new Train();
         $train->azienda = $data_list['azienda'];
         $train->stazione_partenza = $data_list['stazione-partenza'];
@@ -29,6 +30,9 @@ class TrainController extends Controller
         $train->in_orario = $data_list['in-orario'];
         $train->cancellato = $data_list['cancellato'];
         $train->save();
+        */
+
+        $train = Train::create($data_list);
 
         return redirect()->route('trains.index');
     }
