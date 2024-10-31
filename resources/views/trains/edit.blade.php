@@ -8,7 +8,9 @@
         <div class="row">
             <div class="col-3">
                 <!-- Form -->
-                <form>
+                <form action="{{ route('trains.update', $train->id) }}" method="post">
+                    @method('put')
+                    @csrf
                     <!-- Azienda -->
                     <label for="azienda" class="form-label">Azienda:</label>
                     <input type="text" id="azienda" class="form-control" name="azienda" value="{{ $train->azienda }}" placeholder="Azienda">
@@ -43,7 +45,7 @@
                     <label for="cancellato" class="form-label">Cancellato:</label>
                     <input type="text" id="cancellato" class="form-control" name="cancellato" value="{{ $train->cancellato }}" placeholder="Cancellato">
                     <div class="my-3">
-                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                         <button type="reset" class="btn btn-secondary">Annulla</button>
                     </div>
                 </form>

@@ -50,4 +50,25 @@ class TrainController extends Controller
         $train = Train::findOrFail($id);
         return view('trains.edit', compact('train'));
     }
+
+    // Update
+    public function update(Request $request, string $id) {
+        $data_list = $request->all();
+
+        $train = Train::findOrFail($id);
+        $train->azienda = $data_list['azienda'];
+        $train->stazione_partenza = $data_list['stazione-partenza'];
+        $train->stazione_arrivo = $data_list['stazione-arrivo'];
+        $train->data_partenza = $data_list['data-partenza'];
+        $train->data_arrivo = $data_list['data-arrivo'];
+        $train->orario_partenza = $data_list['orario-partenza'];
+        $train->orario_arrivo = $data_list['orario-arrivo'];
+        $train->codice_treno = $data_list['codice-treno'];
+        $train->numero_carrozze = $data_list['numero-carrozze'];
+        $train->in_orario = $data_list['in-orario'];
+        $train->cancellato = $data_list['cancellato'];
+        $train->update();
+
+        return redirect()->route('trains.index');
+    }
 }

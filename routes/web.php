@@ -33,3 +33,6 @@ Route::get('/trains/{id}', [TrainController::class, 'show'])->name('trains.show'
 
 // Edit
 Route::get('/trains/{id}/edit', [TrainController::class, 'edit'])->name('trains.edit');
+
+// Update
+Route::put('/trains/{id}', [TrainController::class, 'update'])->name('trains.update');
